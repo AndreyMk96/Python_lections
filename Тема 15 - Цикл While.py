@@ -22,6 +22,11 @@ while f2 < 1000:
     print(f2)
     f1, f2 = f2, f1 + f2
 
+# Операторы в цикле:
+# else
+# break
+# continue
+
 # While else
 i = 10
 while i < 10:
@@ -42,6 +47,7 @@ while i < len(my_pets):
 else:
     print("не нашли.....")
 
+# Оператор continue
 my_pets2 = ["lion", "dog", "cat", "skunk", "hamster", "monkey"]
 i = -1
 while i < len(my_pets2):
@@ -53,3 +59,7 @@ while i < len(my_pets2):
         break
 else:
     print("Ничего не найдено")
+
+# Бесконечный цикл:
+while True:
+    print("Hello World")

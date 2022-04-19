@@ -1,40 +1,12 @@
-class TestMeCode:
-    n = 1000 # Пока не нужна
-    z = 2    # Первое число с которого будут искатся простые числа
-    s = []   # Список в которые суётся все делители
-    a = []   # Список в который суётся все простые делители
-    def Dragon(self):
-        i = 1
-        while i <= self.z + 1:
-            if i >= self.z + 1:  # Когда алгоритм заканчивает работу
-                self.Dragon2()
-                break
-            if self.z % i == 0:  # Алгоритм вычисления всех делителей
-                self.s.append(i) # Добавляет детели в список
-            i += 1
+romeo_append = []
+romeo_open = open('romeo.txt')
 
-    def Dragon2(self):
-        # Заканчивает алгортим как только будет найдено 11 простых делитей
-        if len(self.a) == 11:
-            # Выводит на экран последний найдёный элемент
-            print(self.a)
-            return
-        # Всего делятся на два числа(простой делитель)
-        if len(self.s)  == 2:
-            # Добавляем простые делители в этот список
-            self.a.append(self.z)
-            # Очищаем первый список чтобы продолжать работу с алгоритмом
-            self.s.clear()
-            # Добавляем один чтобы не появлялось одно и тоже число
-            self.z += 1
-            # Перекидавает на первый алгоритм чтобы продолжать поиск простых делителей
-            self.Dragon()
-        else:
-            # Если больше двух делителей то добавляем один
-            self.z += 1
-            # И очищаем список чтобы продолжать работать с алгортимом
-            self.s.clear()
-            # Перекидавает на первую функцию
-            self.Dragon()
+for romeo_list in romeo_open:
+    romeo_split = romeo_list.split()
+    if romeo_split in romeo_append:
+       continue
+    #romeo_append.append(romeo_split)
+    romeo_append.extend(romeo_split)
+    romeo_append.sort()
 
-TestMeCode().Dragon()
+print(romeo_append)

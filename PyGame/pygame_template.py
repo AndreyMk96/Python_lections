@@ -39,6 +39,11 @@ while running:
             if event.button == 1:
                 r1 = pygame.Rect((40, 0, 40, 40))
                 pygame.draw.rect(screen, colors_list[random.randint(0, 4)], r1, 0)
+            elif event.button == 3:
+                pos = pygame.mouse.get_pos()
+                r1 = pygame.Rect(pos[0], pos[1], 40, 40)
+                pygame.draw.rect(screen, colors_list[random.randint(0, 4)], r1, 0)
+
 
     # Рендеринг
 

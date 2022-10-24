@@ -23,9 +23,13 @@ L2 = list(map(str.upper, L2))
 print(L2)
 
 L3 = [4, 5, 6]  # Также map и lambda - функции можно применять к нескольким спискам
+
 L3 = list(map(lambda x, y : x * y, L3, L))
 print(L3)
 
 L4 = list(map(lambda x:'gate {}'.format(x), L3))
 print(L4)
 
+D1 = {"apple":50, "watermelon":100} # Пример использования лямбда функций и словарей
+D1 = dict(zip(D1.keys(), map(lambda x: x * 2,  D1.values())))
+print(D1)

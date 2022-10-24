@@ -22,13 +22,12 @@ running = True
 angle = 225
 
 while running:
-    #screen.fill("black")
+    screen.fill("black")
     for event in py.event.get():
         if event.type == py.QUIT:
             running = False
 
     # Поворачиваем изображение
-
     new_image = py.transform.rotate(image_orig ,angle)
     rect = new_image.get_rect()
     # Устанавливаем центр прямоугольника

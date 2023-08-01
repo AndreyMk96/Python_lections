@@ -1,5 +1,6 @@
-"""Тема N - Рекурсия"""
+"""Тема 28 - Рекурсия"""
 
+# Рекурсия - это вызов функцией самой себя
 
 # Пример использования рекурсии при подсчете суммы чисел от 0 до N
 def recursion(n):
@@ -9,6 +10,7 @@ def recursion(n):
 
 
 print(recursion(10))
+print("\n")
 #  в отличии от цикла рекурсия работает от большего к меньшему
 
 # Определение факториала числа через рекурсию
@@ -19,22 +21,5 @@ def factorial(n):
         return n * factorial(n - 1)
 print(factorial(6))
 
-# Исследование дерева с рекурсией
-def walk(tree, path=()):
-    path = path + (tree['name'],)
-    yield path
-    for child in tree['children']:
-        yield from walk(child, path)
+# Максимальная глубина рекурсии в Python 1000 (Может быть увеличена при помощи библиотек)
 
-tree = {
-    'name': 'Folder 1',
-    'children': [
-        {'name': 'Folder 2',
-         'children': [
-              {'name': 'Folder 3',
-                'children': []},
-              {'name': 'Folder 4',
-                'children': []}]}]}
-
-for path in walk(tree):
-    print(path)
